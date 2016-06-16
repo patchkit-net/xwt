@@ -30,7 +30,8 @@
     <WarningLevel>4</WarningLevel>
     <ConsolePause>False</ConsolePause>
     <DebugSymbols>true</DebugSymbols>
-    <DefineConstants>MERGABLE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
