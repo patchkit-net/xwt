@@ -269,8 +269,12 @@ namespace Xwt
 			string assembly = type.Substring (i+1).Trim ();
 			type = type.Substring (0, i).Trim ();
 			try {
-				Assembly asm = Assembly.Load (assembly);
-				if (asm != null) {
+#if MERGABLE
+                Assembly asm = Assembly.GetExecutingAssembly();
+#else
+                Assembly asm = Assembly.Load (assembly);
+#endif
+                if (asm != null) {
 					Type t = asm.GetType (type);
 					if (t != null) {
 						backend = (ToolkitEngineBackend) Activator.CreateInstance (t);
